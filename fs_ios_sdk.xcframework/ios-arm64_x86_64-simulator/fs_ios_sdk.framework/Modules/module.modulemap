@@ -1,0 +1,4 @@
+framework module fs_ios_sdk {
+  header "fs_ios_sdk-Swift.h"
+  requires objc
+}
