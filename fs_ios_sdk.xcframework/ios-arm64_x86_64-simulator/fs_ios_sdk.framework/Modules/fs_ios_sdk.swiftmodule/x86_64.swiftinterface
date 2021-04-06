@@ -17,3 +17,20 @@ import WebKit
   @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
+extension FSMiniGame : UIKit.UIScrollViewDelegate {
+  @objc dynamic public func viewForZooming(in scrollView: UIKit.UIScrollView) -> UIKit.UIView?
+}
+@objc @_hasMissingDesignatedInitializers public class FSMiniGame : UIKit.UIView, WebKit.WKScriptMessageHandler {
+  public var userToken: Swift.String?
+  public var pushToken: Swift.String?
+  public var FSApiKey: Swift.String?
+  public var miniGameId: Swift.String
+  public init(frame: CoreGraphics.CGRect?, userToken: Swift.String?, pushToken: Swift.String?, FSApiKey: Swift.String?, id: Swift.String?)
+  @objc override dynamic public func layoutSubviews()
+  @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+  @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+}

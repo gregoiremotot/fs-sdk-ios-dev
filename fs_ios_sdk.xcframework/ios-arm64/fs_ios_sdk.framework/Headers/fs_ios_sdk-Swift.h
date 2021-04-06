@@ -191,6 +191,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import AuthenticationServices;
 @import CoreGraphics;
 @import UIKit;
+@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -218,6 +219,24 @@ SWIFT_CLASS("_TtC10fs_ios_sdk10FSFullGame")
 - (void)layoutSubviews;
 - (void)authorizationController:(ASAuthorizationController * _Nonnull)controller didCompleteWithAuthorization:(ASAuthorization * _Nonnull)authorization;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+@class WKUserContentController;
+@class WKScriptMessage;
+
+SWIFT_CLASS("_TtC10fs_ios_sdk10FSMiniGame")
+@interface FSMiniGame : UIView <WKScriptMessageHandler>
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+@class UIScrollView;
+
+@interface FSMiniGame (SWIFT_EXTENSION(fs_ios_sdk)) <UIScrollViewDelegate>
+- (UIView * _Nullable)viewForZoomingInScrollView:(UIScrollView * _Nonnull)scrollView SWIFT_WARN_UNUSED_RESULT;
 @end
 
 #if __has_attribute(external_source_symbol)
