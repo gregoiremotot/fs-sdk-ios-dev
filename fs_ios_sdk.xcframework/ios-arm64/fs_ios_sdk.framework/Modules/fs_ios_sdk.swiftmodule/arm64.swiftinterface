@@ -11,8 +11,10 @@ import WebKit
   public var userToken: Swift.String?
   public var pushToken: Swift.String?
   public var FSApiKey: Swift.String?
-  public init(frame: CoreGraphics.CGRect?, userToken: Swift.String?, pushToken: Swift.String?, FSApiKey: Swift.String?)
+  public var gameId: Swift.String
+  public init(id: Swift.String?, userToken: Swift.String? = "", pushToken: Swift.String? = "", FSApiKey: Swift.String? = "", frame: CoreGraphics.CGRect? = CGRect())
   @objc override dynamic public func layoutSubviews()
+  public func openPage(completion: @escaping (Swift.String) -> ())
   @objc public func authorizationController(controller: AuthenticationServices.ASAuthorizationController, didCompleteWithAuthorization authorization: AuthenticationServices.ASAuthorization)
   @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
@@ -25,12 +27,14 @@ extension FSMiniGame : UIKit.UIScrollViewDelegate {
   public var pushToken: Swift.String?
   public var FSApiKey: Swift.String?
   public var miniGameId: Swift.String
-  public init(frame: CoreGraphics.CGRect?, userToken: Swift.String?, pushToken: Swift.String?, FSApiKey: Swift.String?, id: Swift.String?)
+  public init(id: Swift.String?, userToken: Swift.String? = "", pushToken: Swift.String? = "", FSApiKey: Swift.String? = "", frame: CoreGraphics.CGRect? = CGRect())
   @objc override dynamic public func layoutSubviews()
   @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
     @objc get
   }
   @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+  public func openPage(completion: @escaping (Swift.String) -> ())
+  public var actionCallback: ((Swift.String) -> Swift.Void)?
   @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
