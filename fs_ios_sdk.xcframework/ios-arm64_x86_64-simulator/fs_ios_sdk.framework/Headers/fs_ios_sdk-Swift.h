@@ -219,7 +219,7 @@ SWIFT_CLASS("_TtC10fs_ios_sdk10FSFullGame")
 @interface FSFullGame : UIView <ASAuthorizationControllerDelegate>
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
-- (void)authorizationController:(ASAuthorizationController * _Nonnull)controller didCompleteWithAuthorization:(ASAuthorization * _Nonnull)authorization;
+- (void)authorizationController:(ASAuthorizationController * _Nonnull)controller didCompleteWithAuthorization:(ASAuthorization * _Nonnull)authorization SWIFT_AVAILABILITY(ios,introduced=13.0);
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
@@ -467,7 +467,7 @@ SWIFT_CLASS("_TtC10fs_ios_sdk10FSFullGame")
 @interface FSFullGame : UIView <ASAuthorizationControllerDelegate>
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
-- (void)authorizationController:(ASAuthorizationController * _Nonnull)controller didCompleteWithAuthorization:(ASAuthorization * _Nonnull)authorization;
+- (void)authorizationController:(ASAuthorizationController * _Nonnull)controller didCompleteWithAuthorization:(ASAuthorization * _Nonnull)authorization SWIFT_AVAILABILITY(ios,introduced=13.0);
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
