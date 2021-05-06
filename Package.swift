@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "fs_ios_sdk",
+    name: "fsiossdk",
     platforms: [
         .iOS(.v11)
     ],
     products: [
         .library(
-            name: "fs_ios_sdk",
-            targets: ["fs_ios_sdk_wrapper"])
+            name: "fsiossdk",
+            targets: ["fsiossdk_wrapper"])
     ],
     dependencies: [
         .package(name: "SocketIO", url: "https://github.com/socketio/socket.io-client-swift", .upToNextMinor(from: "16.0.0")),
@@ -17,16 +17,16 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "fs_ios_sdk_wrapper",
+            name: "fsiossdk_wrapper",
             dependencies: [
                 .product(name: "FacebookLogin", package: "Facebook"),
                 .product(name: "SocketIO", package: "SocketIO"),
-                .target(name: "fs_ios_sdk")
+                .target(name: "fsiossdk")
             ],
             path: "Sources/Wrapper",
             publicHeadersPath: ""
         ),
         .binaryTarget(
-            name: "fs_ios_sdk",
-            path: "fs_ios_sdk.xcframework")
+            name: "fsiossdk",
+            path: "fsiossdk.xcframework")
     ])
